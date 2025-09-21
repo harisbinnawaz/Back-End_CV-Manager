@@ -22,7 +22,7 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Backend is Working...");
+  res.send("Backend is Working fine...");
 });
 
 app.use("/api/v1/user", userRouter);
