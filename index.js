@@ -21,6 +21,10 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+app.get("/", (req, res) => {
+  res.send("Backend is Working...");
+});
+
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/cv", cvRouter);
 app.use("/api/v1/review", reviewRouter);
@@ -29,7 +33,7 @@ app.use("/api/v1/admin", adminRouter);
 app.use(globalError);
 
 mongoose
-  .connect(process.env.LOCAL_DB)
+  .connect(process.env.CLOUD_DB)
   .then(() => {
     console.log("Connected to MongoDB");
   })
